@@ -11,6 +11,9 @@ module.exports = {
       fontFamily: {
         body : ['Poppins', 'sans-serif']
       },
+      backgroundImage : theme => ({ 
+        'hero-pattern': "url('/img/Wave.svg')",
+      }),
     },
     screens: {
       sm: '480px',
