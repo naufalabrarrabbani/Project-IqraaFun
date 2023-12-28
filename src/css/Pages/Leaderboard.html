@@ -18,7 +18,7 @@
   <body class="overflow-x-hidden">
     <!-- Header -->
     <nav x-data="{ navbarMobileOpen: false }" class="bg-white">
-      <div class="max-w-7xl mx-auto px-4 lg:px-14 pt-[18px] lg:py-10">
+      <div class="max-w-7xl mx-auto px-4 lg:px-14 pt-[18px] lg:py-5">
         <div class="flex justify-between h-16">
           <div class="flex flex-auto justify-between">
 
@@ -184,114 +184,116 @@
       </div>
     </nav>
     <!-- End Header -->
+    
     <main class="min-h-screen">
-        <section class="relative p-6 mx-auto mt-2">
-          <div class="relative font-[poppins] max-w-7xl lg:px-14 lg:py-[5px]">
-            <h1 class="text-[35px] text-primary text-center font-semibold lg:text-left">
-              Peringkat Belajar
-            </h1>
+        <div class="relative rounded-md p-6 mx-auto mt-5">
+          <div class="text-center mx-auto">
+            <div>
+              <h1 class="font-[poppins] lg:text-3xl text-2xl font-bold mt-3 text-primary">Papan Peringkat</h1>
+              <img class="mx-auto mt-3" src="/img/leaderboard.svg" alt="">
+            </div>
+
+            <div class="flex justify-center mx-auto gap-10 mt-5">
+              <div>
+                <img class="w-[80px] h-[80px] rounded-full" src="/img/bocil1.png" alt="Rounded avatar">
+                <img src="/img/3rd-place.svg" class="w-[35px] absolute translate-x-[24px] -translate-y-6 h-[50px]" alt="">
+                <h1 class="lg:text-xl text-base font-[poppins] mt-5 text-primary font-semibold">Aisyah</h1>
+                <h2 class="lg:text-xl text-base font-[poppins] text-primary font-semibold">800 pts</h2>
+              </div>
+              <div>
+                <img class="w-[100px] h-[100px] rounded-full" src="/img/bocil2.png" alt="Rounded avatar">
+                <img src="/img/1st.png" class="w-[55px] absolute translate-x-[24px] -translate-y-[30px] h-[55px]" alt="">
+                <h1 class="lg:text-xl text-base font-[poppins] text-primary mt-7 font-semibold">Nisa</h1>
+                <h2 class="lg:text-xl text-base font-[poppins] text-primary font-semibold">1000 pts</h2>
+              </div>
+              <div>
+                <img class="w-[80px] h-[80px] rounded-full" src="/img/bocil3.png" alt="Rounded avatar">
+                <img src="/img/2nd-place.svg" class="w-[35px] absolute translate-x-[24px] -translate-y-6 h-[50px]" alt="">
+                <h1 class="lg:text-xl text-base font-[poppins] mt-5 text-primary font-semibold">Fahri</h1>
+                <h2 class="lg:text-xl text-base font-[poppins] text-primary font-semibold">900 pts</h2>
+              </div>
+            </div>
           </div>
-          <div>
-            
-          </div>
-          <div class="relative p-6 mx-auto">
-            <table class="relative mx-auto w-0 lg:w-full text-sm text-left text-gray-500">
-              <thead class="text-xs bg- text-gray-700 uppercase">
-                  <tr>
-                      <th scope="col" class="lg:px-3 px-3 py-3">
-                          Nama
-                      </th>
-                      <th scope="col" class="lg:px-3 px-3 py-3">
-                          Poin
-                      </th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr class="bg-primary border-b hover:bg-gray-50">
-                      <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
+
+          <table class="lg:w-10/12 w-full rounded-xl border-primary mx-auto text-left mt-5 text-white">
+              <tbody class="rounded-xl bg-primary">
+                  <tr class="">
+                      <td class="w-4 p-4 rounded-tl-xl rounded-bl-xl ">
+                          <div class="flex items-center">
+                            <h1 class="font-[poppins] font-semibold text-white lg:text-xl text-base">4</h1>
+                          </div>
+                      </td>
+                      <th scope="row" class="flex items-center px-2 py-4 font-medium whitespace-nowrap text-white">
                           <img class="w-10 h-10 rounded-full" src="/img/bocil1.png" alt="Jese image">
-                          <div class="pl-3">
-                              <div class="text-base font-semibold">Aisyah Humaira</div>
-                              <div class="font-normal text-white">Kelas 4 SD</div>
-                          </div>  
-                      </th>
-                      <td class="lg:px-3 px-6 py-4">
-                          <div class="flex items-center">
-                              <div class="mr-2">
-                                <img src="/img/Medali.png" class="w-10 lg:flex sm:hidden flex h-[45px]" alt="">
-                              </div> <span class="text-white font-semibold text-[16px]">1700</span>
+                          <div class="ps-3">
+                              <div class="lg:text-xl text-base ml-3 font-semibold">Bonnie Green</div>
                           </div>
+                      </th>
+                      <td class="px-6 lg:text-xl lg:table-cell hidden font-[poppins] py-4">
+                          6 Tahun
                       </td>
-                  </tr>
-                  <tr class="bg-primary border-b border-white hover:bg-gray-50 dark:hover:bg-gray-600">
-                      <th scope="row" class="flex items-center px-6 py-4 font-medium text-white whitespace-nowrap">
-                          <img class="w-10 h-10 rounded-full" src="/img/bocil2.png" alt="Jese image">
-                          <div class="pl-3">
-                              <div class="text-base font-semibold">Azzahra Nisa</div>
-                              <div class="font-normal text-white">Kelas 6 SD</div>
-                          </div>
-                      </th>
-                      <td class="lg:px-3 px-6 py-4">
+                      <td class="px-6 py-4 rounded-tr-xl rounded-br-xl">
                           <div class="flex items-center">
-                            <div class="mr-2">
-                              <img src="/img/Medali.png" class="w-10 h-[45px] lg:flex hidden" alt="">
-                            </div> <span class="text-white font-semibold text-[16px]">1200</span>
-                          </div>
-                      </td>
-                  </tr>
-                  <tr class="bg-primary border-b hover:bg-gray-50 dark:hover:bg-gray-600">
-                      <th scope="row" class="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                          <img class="w-10 h-10 rounded-full" src="/img/bocil3.png" alt="Jese image">
-                          <div class="pl-3">
-                              <div class="text-base font-semibold">Muhammad Fahri</div>
-                              <div class="font-normal text-white">Kelas 5 SD</div>
-                          </div>
-                      </th>
-                      <td class="lg:px-3 px-6 py-4">
-                          <div class="flex items-center">
-                            <div class="mr-2">
-                              <img src="/img/Medali.png" class="w-10 lg:flex hidden h-[45px]" alt="">
-                            </div> <span class="text-white font-semibold text-[16px]">800</span>
-                          </div>
-                      </td>
-                  </tr>
-                  <tr class="bg-primary border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                      <th scope="row" class="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                          <img class="w-10 h-10 rounded-full" src="/docs/images/people/profile-picture-5.jpg" alt="Jese image">
-                          <div class="pl-3">
-                              <div class="text-base font-semibold">Robi Mahendra</div>
-                              <div class="font-normal text-white">Kelas 5 SD</div>
-                          </div>
-                      </th>
-                      <td class="lg:px-3 px-6 py-4">
-                          <div class="flex items-center">
-                            <div class="mr-2">
-                              <img src="/img/Medali.png" class="w-10 lg:flex hidden h-[45px]" alt="">
-                            </div> <span class="text-white font-semibold text-[16px]">600</span>
-                          </div>
-                      </td>
-                  </tr>
-                  <tr class="bg-primary hover:bg-gray-50 dark:hover:bg-gray-600">
-                      <th scope="row" class="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                          <img class="w-10 h-10 rounded-full" src="/docs/images/people/profile-picture-4.jpg" alt="Jese image">
-                          <div class="pl-3">
-                              <div class="text-base font-semibold">Rafli Ramadhan</div>
-                              <div class="font-normal text-gray-500">Kelas 6 SD</div>
-                          </div>
-                      </th>
-                      <td class="lg:px-3 px-6 py-4">
-                          <div class="flex items-center">
-                            <div class="mr-2">
-                              <img src="/img/Medali.png" class="w-10 lg:flex hidden h-[45px]" alt="">
-                            </div> <span class="text-white font-semibold text-[16px]">500</span>
+                              <div class="lg:text-xl text-base font-[poppins]">650 pts</div>
                           </div>
                       </td>
                   </tr>
               </tbody>
-            </table>
-          </div>
-        </section>
-      </main>
+          </table>
+
+          <table class="lg:w-10/12 w-full mx-auto text-left mt-2 text-white">
+              <tbody class="">
+                  <tr class="bg-primary">
+                      <td class="w-4 p-4 rounded-tl-xl rounded-bl-xl">
+                          <div class="flex items-center">
+                            <h1 class="font-[poppins] font-semibold text-white lg:text-xl text-base">5</h1>
+                          </div>
+                      </td>
+                      <th scope="row" class="flex items-center px-2 py-4 font-medium whitespace-nowrap text-white">
+                          <img class="w-10 h-10 rounded-full" src="/img/bocil1.png" alt="Jese image">
+                          <div class="ps-3">
+                              <div class="lg:text-xl text-base ml-3 font-semibold">Bonnie Green</div>
+                          </div>
+                      </th>
+                      <td class="px-6 text-xl lg:table-cell font-[poppins] hidden py-4">
+                          6 Tahun
+                      </td>
+                      <td class="px-6 py-4 rounded-tr-xl rounded-br-xl">
+                          <div class="flex items-center">
+                              <div class="lg:text-xl text-base font-[poppins]">650 pts</div>
+                          </div>
+                      </td>
+                  </tr>
+            </tbody>
+          </table>
+
+          <table class="lg:w-10/12 w-full mx-auto text-left mt-2 text-white">
+              <tbody class="">
+                  <tr class="bg-primary">
+                      <td class="w-4 p-4 rounded-tl-xl rounded-bl-xl">
+                          <div class="flex items-center">
+                            <h1 class="font-[poppins] font-semibold text-white lg:text-xl text-base">6</h1>
+                          </div>
+                      </td>
+                      <th scope="row" class="flex items-center px-2 py-4 font-medium whitespace-nowrap text-white">
+                          <img class="w-10 h-10 rounded-full" src="/img/bocil1.png" alt="Jese image">
+                          <div class="ps-3">
+                              <div class="lg:text-xl text-base ml-3 font-semibold">Bonnie Green</div>
+                          </div>
+                      </th>
+                      <td class="px-6 lg:text-xl lg:table-cell hidden font-[poppins] py-4">
+                          6 Tahun
+                      </td>
+                      <td class="px-6 py-4 rounded-tr-xl rounded-br-xl">
+                          <div class="flex items-center">
+                              <div class="lg:text-xl text-base text-right font-[poppins]">650 pts</div>
+                          </div>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+        </div>
+
       <footer>
         <div class="max-w-screen-xl bg-gray-900 mt-10 px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8 tails-selected-element">
           <nav class="flex flex-wrap justify-center font-[poppins] -mx-5 -my-2">
