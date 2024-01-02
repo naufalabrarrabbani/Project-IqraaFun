@@ -2,7 +2,7 @@
 module.exports = {
   content: ['./*.html', 
             './node_modules/flowbite/**/*.js',
-            './src/css/Pages/**/*{html,js}',],
+            './pages/**/*{html,js}',],
   theme: {
     extend: {
       colors: {
@@ -12,7 +12,7 @@ module.exports = {
         body : ['Poppins', 'sans-serif']
       },
       backgroundImage : theme => ({ 
-        'hero-pattern': "url('/img/Wave.svg')",
+        'hero-pattern': "url('/src/img/Wave.svg')",
       }),
     },
     screens: {
