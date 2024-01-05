@@ -2,14 +2,13 @@
   "name": "iqrafun",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
     "build": "npx tailwindcss -i ./view/assets/css/input.css -o ./view/assets/css/style.css"
   },
   "keywords": [],
-  "author": "afidev",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.2",
