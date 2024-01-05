@@ -1,8 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./*.html', 
-            './node_modules/flowbite/**/*.js',
-            './views/**/*{html,js}',],
+  content: ['./node_modules/flowbite/**/*.js',
+            './view/**/*.ejs'],
   theme: {
     extend: {
       colors: {
@@ -12,7 +11,7 @@ module.exports = {
         body : ['Poppins', 'sans-serif']
       },
       backgroundImage : theme => ({ 
-        'hero-pattern': "url('/src/img/Wave.svg')",
+        'hero-pattern': "url('http://localhost:8000/assets/img/wave.svg')",
       }),
     },
     screens: {

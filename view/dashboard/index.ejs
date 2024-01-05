@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="/src/css/style.css" />
-    <link rel="icon" type="images/x-icon" href="/src/img/logo.svg">
+    <link rel="stylesheet" href="http://localhost:8000/assets/css/style.css" />
+    <link rel="icon" type="images/x-icon" href="http://localhost:8000/assets/img/logo.svg">
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <script src="/src/js/script.js" defer></script>
+    <script src="http://localhost:8000/assets/js/script.js" defer></script>
     <title>Iqraa</title>
   </head>
   <body class="overflow-x-hidden bg-[#f9f4ef]">
@@ -23,10 +23,10 @@
           <div class="flex flex-auto justify-between">
 
             <!-- Logo Brand -->
-            <a href="/index.html" class="flex-shrink-0 flex items-center">
+            <a href="#" class="flex-shrink-0 flex items-center">
               <img
                 class="h-12 lg:h-16 w-auto"
-                src="/src/img/Logo-SVG.svg"
+                src="http://localhost:8000/assets/img/logo-svg.svg"
                 alt="Meet Doctor Logo"
               />
             </a>
@@ -44,25 +44,25 @@
                   items-center px-1 pt-1 text-lg font-medium"
              -->
               <a
-                href="/index.html"
+                href="#"
                 class="text-[#1E2B4F] relative after:absolute after:content-[''] after:border-b-2 after:border-[#0D63F5] after:w-8/12 after:-translate-x-1/2 after:bottom-3 after:left-1/2 font-semibold inline-flex items-center px-1 text-lg"
               >
                 Beranda
               </a>
               <a
-                href="/views/belajar.html"
+                href="views/belajar.html"
                 class="text-[#1E2B4F] relative hover:text-gray-500 inline-flex items-center px-1 pt-1 text-lg font-medium"
               >
                 Belajar
               </a>
               <a
-                href="/views/leaderboard.html"
+                href="views/leaderboard.html"
                 class="text-[#1E2B4F] relative hover:text-gray-500 inline-flex items-center px-1 pt-1 text-lg font-medium"
               >
                 Peringkat
               </a>
               <a
-                href="/views/redeems.html"
+                href="views/redeems.html"
                 class="text-[#1E2B4F] relative hover:text-gray-500 inline-flex items-center px-1 pt-1 text-lg font-medium"
               >
                 Tukar Poin
@@ -71,30 +71,40 @@
 
           </div>
 
+          <!-- Button (no authenticated) -->
+          <div class="hidden lg:ml-10 lg:flex lg:items-center">
+            <a
+              href="views/login.html"
+              class="inline-flex items-center rounded-full text-white text-lg font-medium bg-primary px-10 py-3"
+            >
+              Masuk
+            </a>
+          </div>
+
           <!-- Button (Authenticated) -->
-          <div class="hidden lg:ml-10 lg:flex lg:items-center border-l pl-4 pt-2">
+          <!-- <div class="hidden lg:ml-10 lg:flex lg:items-center border-l pl-4 pt-2">
             <div x-data="{ profileDekstopOpen: false }" class="ml-3 relative">
               <div>
                 <button
                   type="button"
-                  class="rounded-full flex text-sm focus:outline-none"
+                  class="bg-white rounded-full flex text-sm focus:outline-none"
                   
                   id="user-menu-button"
                   aria-expanded="false"
                   aria-haspopup="true"
                   @click="profileDekstopOpen = ! profileDekstopOpen"
-                >
+                > -->
                 <!-- focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 -->
-                  <span class="sr-only">Open user menu</span>
+                  <!-- <span class="sr-only">Open user menu</span>
                   <div class="text-right mr-5">
-                    <div class="text-base font-medium text-[#1E2B4F]">Hi, Abrar</div>
+                    <div class="text-base font-medium text-[#1E2B4F]">Hi, Shayna</div>
                     <div class="text-sm text-[#AFAEC3]">
-                      12 tahun
+                      Pasien
                     </div>
                   </div>
                   <img
                     class="h-12 w-12 rounded-full ring-1 ring-offset-4 ring-[#0D63F3]"
-                    src="https://static.vecteezy.com/system/resources/previews/002/275/847/original/male-avatar-profile-icon-of-smiling-caucasian-man-vector.jpg"
+                    src="/src/assets/images/authenticated-user.svg"
                     alt="User Profile"
                   />
                 </button>
@@ -140,7 +150,7 @@
                 >
               </div>
             </div>
-          </div>
+          </div> -->
 
           <!-- Mobile Toggle button -->
           <div class="-mr-2 flex items-center lg:hidden">
@@ -210,7 +220,7 @@
                       hover:border-gray-300 hover:text-gray-700" 
           -->
           <a
-            href="index.html"
+            href="#"
             class="bg-indigo-50 border-[#0D63F5] text-[#1E2B4F] block pl-3 pr-4 py-2 border-l-4 text-base font-semibold"
             >Beranda</a
           >
@@ -231,46 +241,16 @@
           >
         </div>
 
-        <!-- Profile (Mobile authenticated) -->
+        <!-- Profile (Mobile no authenticated) -->
         <div
-          x-data="{ profileMobilenOpen: false }"
-          class="pt-4 pb-3 border-t border-gray-200"
+          class="py-3 border-gray-200"
         >
-          <div
-            @click="profileMobilenOpen = ! profileMobilenOpen"
-            class="flex items-center px-4 cursor-pointer"
+         <a
+              href="/views/login.html"
+              class="flex items-center justify-center text-center mx-4 rounded-full text-white text-lg font-medium bg-primary px-10 py-3"
           >
-            <div class="flex-shrink-0">
-              <img
-                class="h-10 w-10 rounded-full ring-1 ring-offset-4 ring-[#0D63F3]"
-                src="https://static.vecteezy.com/system/resources/previews/002/275/847/original/male-avatar-profile-icon-of-smiling-caucasian-man-vector.jpg"
-                alt=""
-              />
-            </div>
-            <div class="ml-3">
-              <div class="text-base font-medium text-[#1E2B4F]">Hi, Abrar</div>
-              <div class="text-sm text-[#AFAEC3]">
-                Pasien
-              </div>
-            </div>
-          </div>
-          <div x-show="profileMobilenOpen" class="mt-3 space-y-1">
-            <a
-              href="#"
-              class="block px-4 py-2 text-base font-medium text-gray-500 hover:text-[#1E2B4F] hover:bg-gray-100"
-              >Your Profile</a
-            >
-            <a
-              href="#"
-              class="block px-4 py-2 text-base font-medium text-gray-500 hover:text-[#1E2B4F] hover:bg-gray-100"
-              >Settings</a
-            >
-            <a
-              href="../../index.html"
-              class="block px-4 py-2 text-base font-medium text-gray-500 hover:text-[#1E2B4F] hover:bg-gray-100"
-              >Sign out</a
-            >
-          </div>
+            Masuk
+          </a>
         </div>
       </div>
     </nav>
@@ -286,7 +266,7 @@
           class="relative lg:inline-block lg:absolute flex flex-col mx-auto lg:w-1/2 lg:top-0 lg:right-0"
         >
           <img
-            src="/src/img/HeroImg.svg"
+            src="http://localhost:8000/assets/img/heroimg.svg"
             class="bg-cover bg-center object-cover object-center lg:max-h-[580px]"
             alt="Hero Image"
           />
@@ -318,7 +298,7 @@
               <!-- CTA Button -->
               <div class="grid lg:flex flex-wrap mt-10 gap-5">
                 <a
-                  href="/views/signup.html"
+                  href="views/signup.html"
                   class="text-white text-lg font-medium text-center bg-primary rounded-full px-12 py-3"
                 >
                   Daftar Sekarang
@@ -393,7 +373,7 @@
               <!-- Panel Image -->
               <div class="flex justify-center md:w-1/2">
                 <img
-                  src="/src/img/Panel 1.png"
+                  src="http://localhost:8000/assets/img/panel-1.png"
                   alt=""
                   class="relative z-10"
                 />
@@ -409,7 +389,7 @@
                   Kamu bisa menukar poin kamu yang sudah terkumpul dengan hadiah yang tersedia !
                 </p>
                 <div class="mx-auto md:mx-0">
-                  <a href="/views/redeems.html" class="relative inline-flex items-center px-12 py-3 overflow-hidden text-lg font-medium text-white border-2 border-white rounded-full hover:text-white group hover:bg-gray-50">
+                  <a href="views/redeems.html" class="relative inline-flex items-center px-12 py-3 overflow-hidden text-lg font-medium text-white border-2 border-white rounded-full hover:text-white group hover:bg-gray-50">
                     <span class="absolute left-0 block w-full h-0 transition-all bg-[#A3966A] opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
                     <span class="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
@@ -427,7 +407,7 @@
             <!-- Panel Image -->
             <div class="flex justify-center mb-10 md:w-1/2">
               <img
-                src="/src/img/Hero3.svg"
+                src="http://localhost:8000/assets/img/hero3.svg"
                 alt=""
                 class="relative z-10"
               />
@@ -462,7 +442,7 @@
             <!-- Panel Image -->
             <div class="flex justify-center mb-10 md:w-1/2">
               <img
-                src="/src/img/Hero2.svg"
+                src="http://localhost:8000/assets/img/hero2.svg"
                 alt=""
                 class="relative z-10"
               />
@@ -478,7 +458,7 @@
                 Belajar melalui Video dengan Guru yang sudah berpengalaman dan terbaik di bidangnya !
               </p>
               <div class="mx-auto md:mx-0">
-                <a href="/views/belajar.html" class="relative inline-flex items-center px-12 py-3 overflow-hidden text-lg font-medium text-white border-2 border-white rounded-full hover:text-white group hover:bg-gray-50">
+                <a href="views/belajar.html" class="relative inline-flex items-center px-12 py-3 overflow-hidden text-lg font-medium text-white border-2 border-white rounded-full hover:text-white group hover:bg-gray-50">
                   <span class="absolute left-0 block w-full h-0 transition-all bg-[#A3966A] opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
                   <span class="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
@@ -509,7 +489,7 @@
             <div
               class="flex flex-col p-10 space-y-6 rounded-[15px] bg-indigo-300 text-white"
             >
-              <img src="/src/img/bocil1.png" alt="" class="rounded-full w-[100px] mx-auto h-[100px]">
+              <img src="http://localhost:8000/assets/img/bocil1.png" alt="" class="rounded-full w-[100px] mx-auto h-[100px]">
               <p class="text-sm leading-5 md:text-lg">
                 Belajar di Iqra seru banget tau, gurunya kakak cantik. Bisa tukar hadiah juga. Pokoknya temen-temen wajib cobain belajar disiniiii.
               </p>
@@ -526,7 +506,7 @@
             <div
               class="flex flex-col p-10 space-y-6 rounded-[15px] bg-[#fff4da] text-primary"
             >
-              <img src="/src/img/bocil2.png" alt="" class="rounded-full w-[100px] mx-auto h-[100px]">
+              <img src="http://localhost:8000/assets/img/bocil2.png" alt="" class="rounded-full w-[100px] mx-auto h-[100px]">
               <p class="text-sm leading-5 md:text-lg">
                 Selain dapat ilmu dari platform ini, kita bisa semangat belajar ngejar ranking untuk menjadi yang terbaik. Love buat bu guru.
               </p>
@@ -543,7 +523,7 @@
             <div
               class="flex flex-col p-10 space-y-6 rounded-[15px] bg-red-300 text-white"
             >
-              <img src="/src/img/bocil3.png" alt="" class="rounded-full w-[100px] mx-auto h-[100px]">
+              <img src="http://localhost:8000/assets/img/bocil3.png" alt="" class="rounded-full w-[100px] mx-auto h-[100px]">
               <p class="text-sm leading-5 md:text-lg">
                 Alhamdulillah belajar disini aku sudah bisa mengenal huruf-huruf Hijaiyah, aku juga sudah dapat banyak hadiah dari iqrafun.
               </p>
@@ -739,8 +719,8 @@
                   </svg>
               </a>
           </div>
-          <a href="/index.html" class="flex mx-auto hover:text-primary">
-            <img src="/src/img/Logo.svg" alt="" class="mx-auto" aria-hidden="true">
+          <a href="#" class="flex mx-auto hover:text-primary">
+            <img src="http://localhost:8000/assets/img/Logo.svg" alt="" class="mx-auto" aria-hidden="true">
           </a>
           <p class="mt-8 text-base leading-6 font-[poppins] text-center text-gray-400">
               © 2023 Iqrafun All rights reserved.
