@@ -8,6 +8,7 @@ const session = require('express-session');
 const flash = require('express-flash');
 const cookieParser = require('cookie-parser');
 
+const port = process.env.PORT || 8000;
 
 app.set('views', './view');
 app.set('view engine', 'ejs')
@@ -33,6 +34,6 @@ app.get('/', (req, res) => {
 
 dbConnect()
 
-app.listen(8000, () => {
-    console.log('Server is running port 8000');
+app.listen(port, () => {
+    console.log(`Server is running port ${port}`);
 })
