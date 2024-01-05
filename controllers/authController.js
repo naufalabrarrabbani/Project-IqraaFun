@@ -62,7 +62,7 @@ class authController {
                                 email,
                                 password: await bcrypt.hash(password, 9),
                                 point: 0,
-                                image: "http://localhost:8000/assets/user/avatar-profile.jpg",
+                                image: "avatar-profile.jpg",
                             }
                         )
                         

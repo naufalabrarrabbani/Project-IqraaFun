@@ -6,181 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="/src/css/style.css" />
-    <link rel="icon" type="images/x-icon" href="/src/img/logo.svg">
+    <link rel="stylesheet" href="http://localhost:8000/assets/css/style.css" />
+    <link rel="icon" type="images/x-icon" href="http://localhost:8000/assets/img/logo.svg">
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <script src="/src/js/script.js" defer></script>
+    <script src="http://localhost:8000/assets/js/script.js" defer></script>
     <title>Iqraa</title>
   </head>
  <body class="bg-[#f9f4ef]">
-    <nav x-data="{ navbarMobileOpen: false }" class="bg-[#f9f4ef]">
-      <div class="max-w-7xl mx-auto px-4 lg:px-14 pt-[18px] lg:py-10">
-        <div class="flex justify-between h-16">
-          <div class="flex flex-auto justify-between">
-
-            <!-- Logo Brand -->
-            <a href="/index.html" class="flex-shrink-0 flex items-center">
-              <img
-                class="h-12 lg:h-16 w-auto"
-                src="/src/img/logo-svg.svg"
-                alt="Meet Doctor Logo"
-              />
-            </a>
-
-            <!-- Navigation Menu -->
-            <div class="hidden lg:ml-6 lg:flex font-[poppins] lg:space-x-12">
-              
-              <!-- Active Link: 
-                  "text-[#1E2B4F] after:absolute after:content-[''] after:border-b-2 
-                  after:border-[#0D63F5] after:w-8/12 after:-translate-x-1/2 
-                  after:bottom-3 after:left-1/2 font-semibold", 
-                  
-                  Default Link: 
-                  "text-[#1E2B4F] hover:text-gray-500 inline-flex 
-                  items-center px-1 pt-1 text-lg font-medium"
-             -->
-              <a
-                href="/index.html"
-                class="text-[#1E2B4F] relative hover:text-gray-500 inline-flex items-center px-1 pt-1 text-lg font-medium"
-              >
-                Beranda
-              </a>
-              <a
-                href="/views/belajar.html"
-                class="text-[#1E2B4F] relative hover:text-gray-500 inline-flex items-center px-1 pt-1 text-lg font-medium"
-              >
-                Belajar
-              </a>
-              <a
-                href="/views/leaderboard.html"
-                class="text-[#1E2B4F] relative hover:text-gray-500 inline-flex items-center px-1 pt-1 text-lg font-medium"
-              >
-                Peringkat
-              </a>
-              <a
-                href="/views/redeems.html"
-                class="text-[#1E2B4F] relative after:absolute after:content-[''] after:border-b-2 after:border-[#0D63F5] after:w-8/12 after:-translate-x-1/2 after:bottom-3 after:left-1/2 font-semibold inline-flex items-center px-1 text-lg"
-              >
-                Tukar Poin
-              </a>
-            </div>
-          </div>
-
-          <!-- Button (no authenticated) -->
-          <div class="hidden lg:ml-10 lg:flex lg:items-center">
-            <a
-              href="/views/login.html"
-              class="inline-flex items-center rounded-full text-white text-lg font-medium bg-primary px-10 py-3"
-            >
-              Masuk
-            </a> 
-          </div>
-
-          <!-- Mobile Toggle button -->
-          <div class="-mr-2 flex items-center lg:hidden">
-            <button
-              type="button"
-              class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#0D63F3]"
-              aria-controls="mobile-menu"
-              aria-expanded="false"
-              @click="navbarMobileOpen = ! navbarMobileOpen"
-            >
-              <span class="sr-only">Open main menu</span>
-              
-              <!--
-                Icon when menu is closed.
-                Menu open: "hidden", Menu closed: "block"
-              -->
-              <svg
-                x-show="!navbarMobileOpen"
-                class="block h-8 w-8"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-
-              <!--
-                Icon when menu is open.
-                Menu open: "block", Menu closed: "hidden"
-              -->
-              <svg
-                x-show="navbarMobileOpen"
-                class="block h-8 w-8"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Mobile menu, show/hide based on menu state. -->
-      <div class="lg:hidden font-[poppins]" id="mobile-menu" x-show="navbarMobileOpen">
-        <div class="pt-2 pb-3 space-y-1">
-
-          <!-- 
-            Active Link: "bg-indigo-50 border-[#0D63F5] text-[#1E2B4F]", 
-            
-            Default Link: "border-transparent text-[#1E2B4F] hover:bg-gray-50 
-                      hover:border-gray-300 hover:text-gray-700" 
-          -->
-          <a
-            href="/index.html"
-            class="bg-indigo-50 border-[#0D63F5] text-[#1E2B4F] block pl-3 pr-4 py-2 border-l-4 text-base font-semibold"
-            >Beranda</a
-          >
-          <a
-            href="/views/belajar.html"
-            class="border-transparent text-[#1E2B4F] hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
-            >Belajar</a
-          >
-          <a
-            href="/views/leaderboard.html"
-            class="border-transparent text-[#1E2B4F] hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
-            >Peringkat</a
-          >
-          <a
-            href="/views/redeems.html"
-            class="bg-indigo-50 border-primary text-[#1E2B4F] block pl-3 pr-4 py-2 border-l-4 text-base font-semibold"
-            >Tukar Poin</a
-          >
-        </div>
-
-        <!-- Profile (Mobile no authenticated) -->
-        <div
-          class="py-3 border-gray-200"
-        >
-         <a
-              href="/views/login.html"
-              class="flex items-center justify-center text-center mx-4 rounded-full text-white text-lg font-medium bg-primary px-10 py-3"
-          >
-            Masuk
-          </a>
-        </div>
-      </div>
-    </nav>
+    
+    <%- include('partial/header') %>
     
     <!-- Info Points -->
     <div>
@@ -202,7 +39,7 @@
               <img src="https://cdn.devdojo.com/images/january2023/shape-1.png" class="absolute md:block hidden left-0 h-[4.5rem] w-[4.5rem] bottom-0 -translate-x-full ml-3">
               <div class="w-full">
                 <a href="#">
-                  <img class="p-8 rounded-t-lg" src="/src/img/jam-preview.png" alt="product image" />
+                  <img class="p-8 rounded-t-lg" src="http://localhost:8000/assets/img/jam-preview.png" alt="product image" />
                 </a>
                 <div class="px-2 pb-5">
                   <a href="#">
@@ -248,7 +85,7 @@
               <img src="https://cdn.devdojo.com/images/january2023/shape-1.png" class="absolute md:block hidden left-0 h-[4.5rem] w-[4.5rem] bottom-0 -translate-x-full ml-3">
               <div class="w-full">
                 <a href="#">
-                  <img class="p-8 rounded-t-lg" src="/src/img/jam-preview.png" alt="product image" />
+                  <img class="p-8 rounded-t-lg" src="http://localhost:8000/assets/img/jam-preview.png" alt="product image" />
                 </a>
                 <div class="px-2 pb-5">
                   <a href="#">
@@ -294,7 +131,7 @@
               <img src="https://cdn.devdojo.com/images/january2023/shape-1.png" class="absolute md:block hidden left-0 h-[4.5rem] w-[4.5rem] bottom-0 -translate-x-full ml-3">
               <div class="w-full">
                 <a href="#">
-                  <img class="p-8 rounded-t-lg" src="/src/img/jam-preview.png" alt="product image" />
+                  <img class="p-8 rounded-t-lg" src="http://localhost:8000/assets/img/jam-preview.png" alt="product image" />
                 </a>
                 <div class="px-2 pb-5">
                   <a href="#">
