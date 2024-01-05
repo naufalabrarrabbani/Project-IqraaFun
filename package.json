@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js",
-    "style": "npx tailwindcss -i ./view/assets/css/input.css -o ./view/assets/css/style.css --watch"
+    "dev": "npx tailwindcss -i ./view/assets/css/input.css -o ./view/assets/css/style.css --watch"
   },
   "keywords": [],
   "author": "afidev",
