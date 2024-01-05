@@ -1763,7 +1763,7 @@ video {
 }
 
 .bg-hero-pattern {
-  background-image: url('http://localhost:8000/assets/img/wave.svg');
+  background-image: url('/assets/img/wave.svg');
 }
 
 .from-green-400 {
@@ -3119,11 +3119,6 @@ video {
   .lg\:py-3 {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
-  }
-
-  .lg\:py-5 {
-    padding-top: 1.25rem;
-    padding-bottom: 1.25rem;
   }
 
   .lg\:py-\[20px\] {

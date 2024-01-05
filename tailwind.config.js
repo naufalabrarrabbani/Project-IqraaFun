@@ -11,7 +11,7 @@ module.exports = {
         body : ['Poppins', 'sans-serif']
       },
       backgroundImage : theme => ({ 
-        'hero-pattern': "url('http://localhost:8000/assets/img/wave.svg')",
+        'hero-pattern': "url('/assets/img/wave.svg')",
       }),
     },
     screens: {
