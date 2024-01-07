@@ -6,5 +6,6 @@ router.get('/dashboard', authMiddleware, dashboardController.dashboardPage)
 router.get('/course', authMiddleware, dashboardController.coursePage)
 router.get('/leaderboard', authMiddleware, dashboardController.leaderboardPage)
 router.get('/redeem', authMiddleware, dashboardController.redeemPage)
+router.get('/contact', dashboardController.contactPage)
 
 module.exports = router

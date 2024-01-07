@@ -19,11 +19,11 @@ const authSchema = new Schema({
     },
     point: {
         type: Number,
-        //required: true
+        required: false
     },
     image: {
         type: String,
-        //required: true
+        required: false
     },
 }, { timestamps: true })
 

@@ -22,6 +22,10 @@ class authController {
             return res.render('dashboard/login', { error : ''})
         }
     }
+    successPage = async (req, res) => {
+        const { userInfo } = req
+        return res.render('dashboard/success', { userInfo })
+    }
     userRegister = async (req, res) => {
         const form = formidable({ multiples: true });
         form.parse(req, async (err, fields, files) => {
@@ -83,7 +87,7 @@ class authController {
                         })
 
                         req.flash('success', 'Your register successfull')
-                        return res.redirect('/dashboard')
+                        return res.redirect('/success')
 
                     }
                 } catch (error) {

@@ -22,6 +22,10 @@ class dashboardController {
         const { userInfo } = req
         return res.render('dashboard/redeem', { userInfo })
     };
+    contactPage = async (req, res) => {
+        const { userInfo } = req
+        return res.render('dashboard/contact', { userInfo })
+    };
 }
 
 module.exports = new dashboardController()
