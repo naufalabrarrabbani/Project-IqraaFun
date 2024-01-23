@@ -9,7 +9,7 @@ class authController {
     registerPage = (req, res) => {
         const { curdToken } = req.cookies
         if (curdToken) {
-            return res.redirect('/dashboard')
+            return res.redirect('/')
         } else {
             return res.render('dashboard/register', { error : ''})
         }
@@ -17,7 +17,7 @@ class authController {
     loginPage = (req, res) => {
         const { curdToken } = req.cookies
         if (curdToken) {
-            return res.redirect('/dashboard')
+            return res.redirect('/')
         } else {
             return res.render('dashboard/login', { error : ''})
         }
@@ -133,7 +133,7 @@ class authController {
                         })
 
                         req.flash('success', 'Your login successfull')
-                        return res.redirect('/dashboard')
+                        return res.redirect('/')
                     } else {
                         req.flash('error', 'Your password invalid')
                         return res.redirect('/login')

@@ -28,8 +28,12 @@ fs.readdirSync(`${__dirname}/routes`).map(filename => {
     app.use('/', require(path.join(`${__dirname}`, '/routes', `${filename}`).replace('.js', '')))
 })
 
-app.get('/', (req, res) => {
-    return res.send('Home')
+//app.get('/', (req, res) => {
+//    return res.send('Home')
+//})
+
+app.use("*", (req, res) => {
+    res.render('notfound')
 })
 
 dbConnect()

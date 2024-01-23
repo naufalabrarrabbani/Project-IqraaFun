@@ -4,10 +4,6 @@ const fs = require('fs')
 class dashboardController {
     homePage = async (req, res) => {
         const { userInfo } = req
-        return res.render('home', { userInfo })
-    };
-    dashboardPage = async (req, res) => {
-        const { userInfo } = req
         return res.render('dashboard/index', { userInfo })
     };
     coursePage = async (req, res) => {
