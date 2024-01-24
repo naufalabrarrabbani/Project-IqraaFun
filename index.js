@@ -33,7 +33,7 @@ fs.readdirSync(`${__dirname}/routes`).map(filename => {
 //})
 
 app.use("*", (req, res) => {
-    res.render('notfound')
+    res.render('dashboard/notfound')
 })
 
 dbConnect()
