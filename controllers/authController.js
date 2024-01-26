@@ -23,7 +23,8 @@ class authController {
         }
     }
     successPage = async (req, res) => {
-        const { userInfo } = req
+        const { email } = req.userInfo
+        const userInfo = await authModel.findOne({ email })
         return res.render('dashboard/success', { userInfo })
     }
     userRegister = async (req, res) => {
@@ -72,12 +73,12 @@ class authController {
                         
                         const token = jwt.sign({
                             id: createUser.id,
-                            name: createUser.name,
-                            age: createUser.age,
+                            //name: createUser.name,
+                            //age: createUser.age,
                             email: createUser.email,
-                            password: createUser.password,
-                            point: createUser.point,
-                            image: createUser.image,
+                            //password: createUser.password,
+                            //point: createUser.point,
+                            //image: createUser.image,
                         }, 'afidev', {
                             expiresIn: '3d'
                         })
@@ -118,12 +119,12 @@ class authController {
                     if (matchPassword) {
                         const token = jwt.sign({
                             id: user._id,
-                            name: user.name,
-                            age: user.age,
+                            //name: user.name,
+                            //age: user.age,
                             email: user.email,
-                            password: user.password,
-                            point: user.point,
-                            image: user.image,
+                            //password: user.password,
+                            //point: user.point,
+                            //image: user.image,
                         }, 'afidev', {
                             expiresIn: '3d'
                         })

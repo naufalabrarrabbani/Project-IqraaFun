@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const dbConnect = async () => {
     try {
-        mongoose.connect('mongodb+srv://mongodb-api:Rest-APIs@cluster0.huuao6r.mongodb.net/?retryWrites=true&w=majority') // mongodb://127.0.0.1:27017/iqrafun
+        mongoose.connect('mongodb+srv://iqraafun:Abrarrabbani99@cluster0.xndz9ea.mongodb.net/?retryWrites=true&w=majority')
         console.log('Database connect...')
     } catch (error) {
         console.log(error)

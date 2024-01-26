@@ -32,6 +32,11 @@ fs.readdirSync(`${__dirname}/routes`).map(filename => {
 //    return res.send('Home')
 //})
 
+app.get('/logout', (req, res) => {
+    res.clearCookie('curdToken')
+    res.redirect('/')
+})
+
 app.use("*", (req, res) => {
     res.render('dashboard/notfound')
 })
