@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="icon" type="images/x-icon" href="/assets/img/logo.svg">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="/assets/js/script.js" defer></script>
+    <title>Iqraa</title>
+  </head>
+  <body class="overflow-x-hidden bg-[#f9f4ef]">
+    
+    <!-- Header -->
+    <nav x-data="{ navbarMobileOpen: false }" class="">
+        <div class="max-w-7xl mx-auto px-4 lg:px-14 pt-[18px] lg:py-10">
+          <div class="flex justify-between h-16">
+            <div class="flex flex-auto justify-between">
+  
+              <!-- Logo Brand -->
+              <a href="#" class="flex-shrink-0 flex items-center">
+                <img
+                  class="h-12 lg:h-16 w-auto"
+                  src="/assets/img/logo-svg.svg"
+                  alt="Meet Doctor Logo"
+                />
+              </a>
+  
+              <!-- Navigation Menu -->
+              <div class="hidden lg:ml-6 lg:flex font-[poppins] lg:space-x-12">
+                
+                <!-- Active Link: 
+                    "text-[#1E2B4F] after:absolute after:content-[''] after:border-b-2 
+                    after:border-[#0D63F5] after:w-8/12 after:-translate-x-1/2 
+                    after:bottom-3 after:left-1/2 font-semibold", 
+                    
+                    Default Link: 
+                    "text-[#1E2B4F] hover:text-gray-500 inline-flex 
+                    items-center px-1 pt-1 text-lg font-medium"
+              -->
+                <a
+                  href="/"
+                  class="text-[#1E2B4F] relative hover:text-gray-500 inline-flex items-center px-1 pt-1 text-lg font-medium"
+                >
+                  Beranda
+                </a>
+                <a
+                  href="/course"
+                  class="text-[#1E2B4F] relative hover:text-gray-500 inline-flex items-center px-1 pt-1 text-lg font-medium"
+                >
+                  Belajar
+                </a>
+                <a
+                  href="/leaderboard"
+                  class="text-[#1E2B4F] relative after:absolute after:content-[''] after:border-b-2 after:border-[#0D63F5] after:w-8/12 after:-translate-x-1/2 after:bottom-3 after:left-1/2 font-semibold inline-flex items-center px-1 text-lg"
+                >
+                  Peringkat
+                </a>
+                <a
+                  href="/redeem"
+                  class="text-[#1E2B4F] relative hover:text-gray-500 inline-flex items-center px-1 pt-1 text-lg font-medium"
+                >
+                  Tukar Poin
+                </a>
+              </div>
+  
+            </div>
+  
+            <!-- Button (Authenticated) -->
+            <div class="hidden lg:ml-10 lg:flex lg:items-center border-l pl-4 pt-2">
+              <div x-data="{ profileDekstopOpen: false }" class="ml-3 relative">
+                <div>
+                  <button
+                    type="button"
+                    class="rounded-full flex text-sm focus:outline-none"
+                    
+                    id="user-menu-button"
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                    @click="profileDekstopOpen = ! profileDekstopOpen"
+                  >
+                  <!-- focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 -->
+                    <span class="sr-only">Open user menu</span>
+                    <div class="text-right mr-5">
+                      <div class="text-base font-medium text-[#1E2B4F]">Hi, <%= userInfo.name %></div>
+                      <div class="text-sm text-[#AFAEC3]">
+                        <%= userInfo.age %> tahun
+                      </div>
+                    </div>
+                    <img
+                      class="h-12 w-12 rounded-full ring-1 ring-offset-4 ring-[#0D63F3]"
+                      src="/assets/user/<%= userInfo.image %>"
+                      alt="User Profile"
+                    />
+                  </button>
+                </div>
+                <div
+                  x-show="profileDekstopOpen"
+                  @click.outside="profileDekstopOpen = false"
+                  x-transition:enter="transition ease-out duration-200"
+                  x-transition:enter-start="opacity-0 scale-95"
+                  x-transition:enter-end="opacity-100 scale-100"
+                  x-transition:leave="transition ease-in duration-75"
+                  x-transition:leave-start="opacity-100 scale-100"
+                  x-transition:leave-end="opacity-0 scale-95"
+                  class="origin-top-right absolute z-30 right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  role="menu"
+                  aria-orientation="vertical"
+                  aria-labelledby="user-menu-button"
+                  tabindex="-1"
+                >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-sm text-[#1E2B4F] hover:bg-gray-100"
+                    role="menuitem"
+                    tabindex="-1"
+                    id="user-menu-item-0"
+                    >Your Profile</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-sm text-[#1E2B4F] hover:bg-gray-100"
+                    role="menuitem"
+                    tabindex="-1"
+                    id="user-menu-item-1"
+                    >Settings</a
+                  >
+                  <a
+                    href="/logout"
+                    class="block px-4 py-2 text-sm text-[#1E2B4F] hover:bg-gray-100"
+                    role="menuitem"
+                    tabindex="-1"
+                    id="user-menu-item-2"
+                    >Sign out</a
+                  >
+                </div>
+              </div>
+            </div>
+  
+            <!-- Mobile Toggle button -->
+            <div class="-mr-2 flex items-center lg:hidden">
+              <button
+                type="button"
+                class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#0D63F3]"
+                aria-controls="mobile-menu"
+                aria-expanded="false"
+                @click="navbarMobileOpen = ! navbarMobileOpen"
+              >
+                <span class="sr-only">Open main menu</span>
+                
+                <!--
+                  Icon when menu is closed.
+                  Menu open: "hidden", Menu closed: "block"
+                -->
+                <svg
+                  x-show="!navbarMobileOpen"
+                  class="block h-8 w-8"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+  
+                <!--
+                  Icon when menu is open.
+                  Menu open: "block", Menu closed: "hidden"
+                -->
+                <svg
+                  x-show="navbarMobileOpen"
+                  class="block h-8 w-8"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="lg:hidden font-[poppins]" id="mobile-menu" x-show="navbarMobileOpen">
+          <div class="pt-2 pb-3 space-y-1">
+  
+            <!-- 
+              Active Link: "bg-indigo-50 border-[#0D63F5] text-[#1E2B4F]", 
+              
+              Default Link: "border-transparent text-[#1E2B4F] hover:bg-gray-50 
+                        hover:border-gray-300 hover:text-gray-700" 
+            -->
+            <a
+              href="/"
+              class="border-transparent text-[#1E2B4F] hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+              >Beranda</a
+            >
+            <a
+              href="/course"
+              class="border-transparent text-[#1E2B4F] hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+              >Belajar</a
+            >
+            <a
+              href="/leaderboard"
+              class="bg-indigo-50 border-[#0D63F5] text-[#1E2B4F] block pl-3 pr-4 py-2 border-l-4 text-base font-semibold"
+              >Peringkat</a
+            >
+            <a
+              href="/redeem"
+              class="border-transparent text-[#1E2B4F] hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+              >Tukar Poin</a
+            >
+          </div>
+  
+          <!-- Profile (Mobile authenticated) -->
+          <div
+            x-data="{ profileMobilenOpen: false }"
+            class="pt-4 pb-3 border-t border-gray-200"
+          >
+            <div
+              @click="profileMobilenOpen = ! profileMobilenOpen"
+              class="flex items-center px-4 cursor-pointer"
+            >
+              <div class="flex-shrink-0">
+                <img
+                  class="h-10 w-10 rounded-full ring-1 ring-offset-4 ring-[#0D63F3]"
+                  src="/assets/user/<%= userInfo.image %>"
+                  alt=""
+                />
+              </div>
+              <div class="ml-3">
+                <div class="text-base font-medium text-[#1E2B4F]">Hi, <%= userInfo.name %></div>
+                <div class="text-sm text-[#AFAEC3]">
+                  <%= userInfo.age %> tahun
+                </div>
+              </div>
+            </div>
+            <div x-show="profileMobilenOpen" class="mt-3 space-y-1">
+              <a
+                href="#"
+                class="block px-4 py-2 text-base font-medium text-gray-500 hover:text-[#1E2B4F] hover:bg-gray-100"
+                >Your Profile</a
+              >
+              <a
+                href="#"
+                class="block px-4 py-2 text-base font-medium text-gray-500 hover:text-[#1E2B4F] hover:bg-gray-100"
+                >Settings</a
+              >
+              <a
+                href="/logout"
+                class="block px-4 py-2 text-base font-medium text-gray-500 hover:text-[#1E2B4F] hover:bg-gray-100"
+                >Sign out</a
+              >
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- End Header-->
+    
+    <main class="min-h-screen">
+        <div class="relative rounded-md p-6 mx-auto mt-5">
+          <div class="text-center mx-auto">
+            <div>
+              <h1 class="font-[poppins] lg:text-3xl text-2xl font-bold mt-3 text-primary">Papan Peringkat</h1>
+              <img class="mx-auto mt-3" src="/assets/img/leaderboard.svg" alt="">
+            </div>
+
+            <div class="flex justify-center mx-auto gap-10 mt-5">
+              <div>
+                <img class="w-[80px] h-[80px] rounded-full" src="/assets/img/bocil1.png" alt="Rounded avatar">
+                <img src="/assets/img/3rd-place.svg" class="w-[35px] absolute translate-x-[24px] -translate-y-6 h-[50px]" alt="">
+                <h1 class="lg:text-xl text-base font-[poppins] mt-5 text-primary font-semibold">Aisyah</h1>
+                <h2 class="lg:text-xl text-base font-[poppins] text-primary font-semibold">800 pts</h2>
+              </div>
+              <div>
+                <img class="w-[100px] h-[100px] rounded-full" src="/assets/img/bocil2.png" alt="Rounded avatar">
+                <img src="/assets/img/1st.png" class="w-[55px] absolute translate-x-[24px] -translate-y-[30px] h-[55px]" alt="">
+                <h1 class="lg:text-xl text-base font-[poppins] text-primary mt-7 font-semibold">Nisa</h1>
+                <h2 class="lg:text-xl text-base font-[poppins] text-primary font-semibold">1000 pts</h2>
+              </div>
+              <div>
+                <img class="w-[80px] h-[80px] rounded-full" src="/assets/img/bocil3.png" alt="Rounded avatar">
+                <img src="/assets/img/2nd-place.svg" class="w-[35px] absolute translate-x-[24px] -translate-y-6 h-[50px]" alt="">
+                <h1 class="lg:text-xl text-base font-[poppins] mt-5 text-primary font-semibold">Fahri</h1>
+                <h2 class="lg:text-xl text-base font-[poppins] text-primary font-semibold">900 pts</h2>
+              </div>
+            </div>
+          </div>
+
+          <table class="lg:w-10/12 w-full rounded-xl border-primary mx-auto text-left mt-5 text-white">
+              <tbody class="rounded-xl bg-primary">
+                  <tr class="">
+                      <td class="w-4 p-4 rounded-tl-xl rounded-bl-xl ">
+                          <div class="flex items-center">
+                            <h1 class="font-[poppins] font-semibold text-white lg:text-xl text-base">4</h1>
+                          </div>
+                      </td>
+                      <th scope="row" class="flex items-center px-2 py-4 font-medium whitespace-nowrap text-white">
+                          <img class="w-10 h-10 rounded-full" src="/assets/img/bocil1.png" alt="Jese image">
+                          <div class="ps-3">
+                              <div class="lg:text-xl text-base ml-3 font-semibold">Bonnie Green</div>
+                          </div>
+                      </th>
+                      <td class="px-6 lg:text-xl lg:table-cell hidden font-[poppins] py-4">
+                          6 Tahun
+                      </td>
+                      <td class="px-6 py-4 rounded-tr-xl rounded-br-xl">
+                          <div class="flex items-center">
+                              <div class="lg:text-xl text-base font-[poppins]">650 pts</div>
+                          </div>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+
+          <table class="lg:w-10/12 w-full mx-auto text-left mt-2 text-white">
+              <tbody class="">
+                  <tr class="bg-primary">
+                      <td class="w-4 p-4 rounded-tl-xl rounded-bl-xl">
+                          <div class="flex items-center">
+                            <h1 class="font-[poppins] font-semibold text-white lg:text-xl text-base">5</h1>
+                          </div>
+                      </td>
+                      <th scope="row" class="flex items-center px-2 py-4 font-medium whitespace-nowrap text-white">
+                          <img class="w-10 h-10 rounded-full" src="/assets/img/bocil1.png" alt="Jese image">
+                          <div class="ps-3">
+                              <div class="lg:text-xl text-base ml-3 font-semibold">Bonnie Green</div>
+                          </div>
+                      </th>
+                      <td class="px-6 text-xl lg:table-cell font-[poppins] hidden py-4">
+                          6 Tahun
+                      </td>
+                      <td class="px-6 py-4 rounded-tr-xl rounded-br-xl">
+                          <div class="flex items-center">
+                              <div class="lg:text-xl text-base font-[poppins]">650 pts</div>
+                          </div>
+                      </td>
+                  </tr>
+            </tbody>
+          </table>
+
+          <table class="lg:w-10/12 w-full mx-auto text-left mt-2 text-white">
+              <tbody class="">
+                  <tr class="bg-primary">
+                      <td class="w-4 p-4 rounded-tl-xl rounded-bl-xl">
+                          <div class="flex items-center">
+                            <h1 class="font-[poppins] font-semibold text-white lg:text-xl text-base">6</h1>
+                          </div>
+                      </td>
+                      <th scope="row" class="flex items-center px-2 py-4 font-medium whitespace-nowrap text-white">
+                          <img class="w-10 h-10 rounded-full" src="/assets/img/bocil1.png" alt="Jese image">
+                          <div class="ps-3">
+                              <div class="lg:text-xl text-base ml-3 font-semibold">Bonnie Green</div>
+                          </div>
+                      </th>
+                      <td class="px-6 lg:text-xl lg:table-cell hidden font-[poppins] py-4">
+                          6 Tahun
+                      </td>
+                      <td class="px-6 py-4 rounded-tr-xl rounded-br-xl">
+                          <div class="flex items-center">
+                              <div class="lg:text-xl text-base text-right font-[poppins]">650 pts</div>
+                          </div>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+        </div>
+
+      <!--Footer-->
+      <%- include('partial/footer') %>
+      
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.8.0/dist/cdn.min.js"
+    ></script>
+   </body>
+</html>

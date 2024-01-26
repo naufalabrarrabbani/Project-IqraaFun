@@ -1,0 +1,48 @@
+const express = require('express');
+const path = require('path');
+const app = express();
+const fs = require('fs');
+const bodyParser = require('body-parser');
+const dbConnect = require('./config/dbConnect');
+const session = require('express-session');
+const flash = require('express-flash');
+const cookieParser = require('cookie-parser');
+
+const port = process.env.PORT || 8000;
+
+app.set('views', './view');
+app.set('view engine', 'ejs')
+app.use(express.static(path.join(__dirname, 'view')));
+
+app.use(bodyParser.urlencoded({ extended: true }))
+
+app.use(cookieParser())
+app.use(session({
+    secret: '754h5456f4',
+    resave: true,
+    saveUninitialized: true
+}))
+app.use(flash())
+
+fs.readdirSync(`${__dirname}/routes`).map(filename => {
+    app.use('/', require(path.join(`${__dirname}`, '/routes', `${filename}`).replace('.js', '')))
+})
+
+//app.get('/', (req, res) => {
+//    return res.send('Home')
+//})
+
+app.get('/logout', (req, res) => {
+    res.clearCookie('curdToken')
+    res.redirect('/')
+})
+
+app.use("*", (req, res) => {
+    res.render('dashboard/notfound')
+})
+
+dbConnect()
+
+app.listen(port, () => {
+    console.log(`Server is running port ${port}`);
+})
